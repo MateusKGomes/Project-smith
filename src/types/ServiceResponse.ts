@@ -10,4 +10,4 @@ type ServiceResponseError = {
   }
 };
 
-export type ServiceResponse<T> = ServiceResponseSucess<T> | ServiceResponseError;  
+export type ServiceResponse<T> = ServiceResponseSucess<T> | ServiceResponseError;
