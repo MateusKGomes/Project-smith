@@ -3,11 +3,10 @@ import { ServiceResponse } from 'src/types/ServiceResponse';
 import ProductModel from '../database/models/product.model';
 
 type ProductCreate = Omit<Product, 'orderId'>;
-type ProductParam = Omit<Product, 'id'>;
 
 type CreatedProductResponse = ServiceResponse<ProductCreate>;
 
-const create = async (input: ProductParam): Promise<CreatedProductResponse> => {
+const create = async (input: Product): Promise<CreatedProductResponse> => {
   const { name, price, orderId } = input;
 
   if (!name || !price || !orderId) {
@@ -26,6 +25,17 @@ const create = async (input: ProductParam): Promise<CreatedProductResponse> => {
   };
 };
 
+type FindAllProductResponse = ServiceResponse<object>;
+
+const findAll = async (): Promise<FindAllProductResponse> => {
+  const products = await ProductModel.findAll();
+  return {
+    type: 'OK',
+    data: products,
+  };
+};
+
 export default { 
   create,
+  findAll,
 };
