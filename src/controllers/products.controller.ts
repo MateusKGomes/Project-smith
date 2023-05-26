@@ -12,7 +12,7 @@ const create = async (req: Request, res: Response): Promise<Response> => {
 };
 
 const findAll = async (req: Request, res: Response): Promise<Response> => {
-  const products = await productsService.findAll();
+  const products = await productsService.findAll();  
   return res.status(200).json(products.data);
 };
 

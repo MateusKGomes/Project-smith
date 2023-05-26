@@ -25,7 +25,7 @@ const create = async (input: Product): Promise<CreatedProductResponse> => {
   };
 };
 
-type FindAllProductResponse = ServiceResponse<object>;
+export type FindAllProductResponse = ServiceResponse<object>;
 
 const findAll = async (): Promise<FindAllProductResponse> => {
   const products = await ProductModel.findAll();
