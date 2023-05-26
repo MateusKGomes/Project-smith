@@ -2,9 +2,6 @@ import { ServiceResponse } from 'src/types/ServiceResponse';
 import OrderModel from '../database/models/order.model';
 import ProductModel from '../database/models/product.model';
 import { ReturnFindAll } from '../types/Order';
-// import sequelize from '../database/models';
-
-// type FindAllProductResponse = ServiceResponse<object>;
 
 type FindAllProductResponse = ServiceResponse<ReturnFindAll[]>;
 
